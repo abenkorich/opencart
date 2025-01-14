@@ -22,7 +22,8 @@ RUN apt-get install -y \
   libpng-dev \
   libzip-dev \
   && docker-php-ext-configure gd --with-freetype --with-jpeg\
-  && docker-php-ext-install -j$(nproc) gd \
+  #&& docker-php-ext-install -j$(nproc) gd \
+  && docker-php-ext-install gd \
   && docker-php-ext-install zip && && docker-php-ext-enable zip\
   && docker-php-ext-enable mysqli
 
