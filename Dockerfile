@@ -43,8 +43,8 @@ RUN mv /tmp/opencart/$(if [ -n "$FOLDER" ]; then echo $FOLDER; else  unzip -l /t
 RUN rm -rf /tmp/opencart.zip && rm -rf /tmp/opencart && rm -rf ${DIR_OPENCART}install;
 
 RUN mv ${DIR_OPENCART}system/storage/* /storage
-COPY configs ${DIR_OPENCART}
-COPY php.ini ${PHP_INI_DIR}
+#COPY configs ${DIR_OPENCART}
+#COPY php.ini ${PHP_INI_DIR}
 
 RUN a2enmod rewrite
 
