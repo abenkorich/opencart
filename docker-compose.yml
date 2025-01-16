@@ -5,6 +5,11 @@ services:
     user: 1000:1000
     ports:
       - "80:80"
+	healthcheck:
+      test: 'wget -qO- http://localhost:80/ping || exit 1'
+      interval: 4s
+      timeout: 2s
+      retries: 5
     volumes:
       - ./upload:/var/www/html
     depends_on:
